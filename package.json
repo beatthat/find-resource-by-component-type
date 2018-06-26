@@ -1,0 +1,46 @@
+{
+  "name": "find-resource-by-component-type",
+  "scope": "beatthat",
+  "version": "1.0.0",
+  "description": "Use to find Unity Resources by component type, following a naming convention",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "preinstall:test": "rm -f *.tgz",
+    "install:test": "npm pack && cp ${npm_package_name}-${npm_package_version}.tgz ${npm_package_name}-latest.tgz && cd test && npm run clean && npm install",
+    "clean": "rm -f *.tgz package-lock.json && cd test && npm run clean",
+    "template:update": "node scripts/template-update.js",
+    "cp:test2src": "cd test && node scripts/cp-test2src.js",
+    "overwrite:test2src": "cd test && node scripts/overwrite-test2src.js",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags && npm run clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beatthat/find-resource-by-component-type.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beatthat/find-resource-by-component-type/issues"
+  },
+  "homepage": "https://github.com/beatthat/find-resource-by-component-type#readme",
+  "files": [
+    "index.js",
+    "scripts",
+    "src",
+    "Runtime",
+    "Samples"
+  ],
+  "dependencies": {
+    "path": "^0.12.7",
+    "collections-ext": "github:beatthat/collections-ext#semver:^1.0.0",
+    "get-components-ext": "github:beatthat/get-components-ext#semver:^1.0.0",
+    "placements": "github:beatthat/placements#semver:^1.0.0",
+    "pools": "github:beatthat/pools#semver:^1.0.0",
+    "type-utils": "github:beatthat/type-utils#semver:^1.0.0",
+    "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^1.0.0"
+  },
+  "devDependencies": {}
+}
