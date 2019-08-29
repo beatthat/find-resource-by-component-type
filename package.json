@@ -1,7 +1,7 @@
 {
   "name": "find-resource-by-component-type",
   "scope": "beatthat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Use to find Unity Resources by component type, following a naming convention",
   "main": "index.js",
   "scripts": {
